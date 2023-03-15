@@ -1,6 +1,4 @@
 <?php 
-    
-
     class mysqlConex{
         
         public function conn(){
