@@ -8,6 +8,7 @@ if (isset($_SESSION['ID_User'])) {
     $Password = $_SESSION["Password"];
     $RegistrationDate = $_SESSION["RegistrationDate"];
     $Status = $_SESSION["Status"];
+    
 }
 ?>
 <!DOCTYPE html>
