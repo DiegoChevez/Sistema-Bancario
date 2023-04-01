@@ -155,66 +155,49 @@
                         <div class="col-xl-12">                          
                                 <div class="card-body--">
                                     <div class="table-stats order-table ov-h">
-                                        <table class="table ">
+                                        <table class="table">
                                             <thead>
                                                 <tr>
                                                     <th class="serial">ID Empleado</th>
                                                     <th>Nombre</th>
-                                                    <th>Correo</th>
-                                                    <th>Salario</th>
+                                                    <th>DUI</th>
+                                                    <th>Teléfono</th>
                                                     <th>Estado</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            <?php
+
+                                            include_once "Connection.php";
+
+                                            $sql = "SELECT * FROM employees";
+
+                                            $result = $connection->query($sql);
+                                            
+                                            if(!$result){
+                                                die("invalid query" . $connection-> error);
+                                            }
+
+                                            while($row = $result->fetch_assoc()){
+
+                                                echo "
                                                 <tr>
-                                                    <td class="serial">1</td>
-                                                    <td>  <span class="name">Erick Fuentes</span> </td>
-                                                    <td> <span class="product">erickfuentes@gmail.com</span> </td>
-                                                    <td><span class="count">500</span></td>
+                                                    <td>$row[ID_Employee]</td>;
+                                                    <td>$row[Names]</td>
+                                                    <td>$row[DUI]</td>
+                                                    <td>$row[PhoneNumber]</td>
                                                     <td>
-                                                        <button type="button" class="btn btn-danger" onclick="location.href='fired.html'" >✖</button> 
-                                                        <span class="badge badge-complete">Activo</span>
+                                                        
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td class="serial">2</td>
-                                                    <td>  <span class="name">Cesar González</span> </td>
-                                                    <td> <span class="product">Cesargonzalez@gmail.com</span> </td>
-                                                    <td><span class="count">650</span></td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-danger" onclick="location.href='fired.html'" >✖</button>
-                                                        <span class="badge badge-complete">Activo</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="serial">3</td>
-                                                    <td>  <span class="name">Bryan Cornejo</span> </td>
-                                                    <td> <span class="product">bryancornejo@gmail.com </td>
-                                                    <td><span class="count">950</span></td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-danger" onclick="location.href='fired.html'" >✖</button>
-                                                        <span class="badge badge-complete">Activo</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="serial">4</td>
-                                                    <td>  <span class="name">Diego Chevez</span> </td>
-                                                    <td> <span class="product">diegochevez@gmail.com</span> </td>
-                                                    <td><span class="count">350</span></td>
-                                                    <td>
-                                                        <span class="badge badge-danger">Inactivo</span>
-                                                    </td>
-                                                </tr>
-                                                <tr class=" pb-0">
-                                                    <td class="serial">5</td>
-                                                    <td>  <span class="name">Angie Valencia</span> </td>
-                                                    <td> <span class="product">angievalencia@gmail.com</span> </td>
-                                                    <td><span class="count">750</span></td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-danger" onclick="location.href='fired.html'" >✖</button>
-                                                        <span class="badge badge-complete">Activo</span>
-                                                    </td>
-                                                </tr>
+
+                                                ";
+                                            }
+
+                                            ?>
+
+                                            
+                                                
                                             </tbody>
                                         </table>
                                     </div>
