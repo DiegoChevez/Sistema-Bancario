@@ -1,7 +1,6 @@
 <?php
 include "controller.php";
 
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,6 +15,8 @@ include "controller.php";
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" href="css/style.css">
+	
+	<link href="../Tools/SweetAlert/sweetalert2.min.css" rel="stylesheet">
 
 
 </head>
@@ -71,12 +72,33 @@ include "controller.php";
 		</div>
 	</section>
 
+	
 	<script src="js/jquery.min.js"></script>
 	<script src="js/popper.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
 
 
+	<script src="../Tools/SweetAlert/sweetalert2.all.min.js"></script>
+	
+
+	<?php
+		if(isset($_GET['error1'])){
+			echo "<script>Swal.fire({
+							icon: 'error',
+							title: 'Oops...',
+							text: 'Existen Campos Vacios!'})
+				</script>";
+		}
+
+		if(isset($_GET['error2'])){
+			echo "<script>Swal.fire({
+							icon: 'error',
+							title: 'Oops...',
+							text: 'Credenciales Incorrectas!'})
+				</script>";
+		}
+	?>
 
 </body>
 

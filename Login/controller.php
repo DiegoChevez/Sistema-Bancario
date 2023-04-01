@@ -43,13 +43,13 @@ if (!empty($_POST["btn-access"])) {
                 }
 
             }else {
-                # code...
+                header("location:index.php?error2=0");
             }
             
         } else {
-            # code...
+            header("location:index.php?error2=0");
         }
     } else {
-
+        header("location:index.php?error1=0");
     }
 }
