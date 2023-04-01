@@ -162,39 +162,49 @@
                                                     <th>Nombre</th>
                                                     <th>DUI</th>
                                                     <th>Teléfono</th>
-                                                    <th>Estado</th>
+                                                    <th>Recidencia</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <?php
+                                                <?php
+                                                ////////////////////////////////
+                                                $servername = "localhost";
+                                                $username = "root";
+                                                $password = "";
+                                                $database = "banco_perla";
 
-                                            include_once "Connection.php";
+                                                $connection = new mysqli($servername, $username, $password, $database);
 
-                                            $sql = "SELECT * FROM employees";
+                                                if($connection->connect_error){
+                                                    die ("Connection failed: " . $connection->connect_error);
+                                                }
+                                                ///////////////////////////////////
+                                                 $sql= "SELECT * FROM employees"; 
+                                                 $result = $connection->query($sql);                  
+                                                
+                                                 if (!$result) {
+                                                    die("Invalid query: " . $connection->error);
+                                                 }
 
-                                            $result = $connection->query($sql);
-                                            
-                                            if(!$result){
-                                                die("invalid query" . $connection-> error);
-                                            }
-
-                                            while($row = $result->fetch_assoc()){
-
-                                                echo "
-                                                <tr>
+                                                 while($row = $result->fetch_assoc()){
+                                                    echo "
+                                                    <tr>
                                                     <td>$row[ID_Employee]</td>;
                                                     <td>$row[Names]</td>
                                                     <td>$row[DUI]</td>
                                                     <td>$row[PhoneNumber]</td>
+                                                    <td>$row[Residence]</td>
                                                     <td>
                                                         
                                                     </td>
                                                 </tr>
+                                                    ";
+                                                 }
+                                                ?>
 
-                                                ";
-                                            }
+                                                
 
-                                            ?>
+                                            
 
                                             
                                                 

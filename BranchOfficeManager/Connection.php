@@ -1,12 +1,13 @@
 <?
+
 $servername = "localhost";
-$username = "root";
-$password = "";
-$database = "banco_perla";
+                                                $username = "root";
+                                                $password = "";
+                                                $database = "banco_perla";
 
-$connection = new mysqli($servername, $username, $password, $database);
+                                                $connection = new mysqli($servername, $username, $password, $database);
 
-if($connection ->connect_error){
-    die ("Connection failed: " . $connection->connect_error);
-}
+                                                if($connection->connect_error){
+                                                    die ("Connection failed: " . $connection->connect_error);
+                                                }
 ?>
