@@ -261,7 +261,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong>Agregar</strong> Usuarios
+                            <strong>Agregar</strong> Cliente
                         </div>
                         <div class="card-body card-block">
                             <form action="controllers/customer-controller.php" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -581,6 +581,14 @@
                             icon: 'error',
                             title: 'Oops...',
                             text: 'El Correo ya esta asignado a otra cuenta'})
+                </script>";
+        }
+
+        if(isset($_GET['success'])){
+            echo "<script>Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: 'Se ha agregado correctamente'})
                 </script>";
         }
     ?>

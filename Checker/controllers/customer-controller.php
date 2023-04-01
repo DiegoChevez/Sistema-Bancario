@@ -31,6 +31,8 @@ if(isset($_POST["btn-AddCustomer"])){
 
             $Insert2 = $conex ->query("INSERT INTO `customers`(`ID_Cliente`, `Names`, `Surnames`, `DUI`, `Salary`, `Residence`, `PhoneNumber`, `UserAccount`) 
                                     VALUES ('".$idPerson."','".$names."','".$surnames."','".$dui."','".$salary."','".$recidence."','".$phoneNumber."','".$idPerson."')");
+
+            header("location:../customer-creator.php?success=0");
         }
     }
 
