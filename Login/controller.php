@@ -23,22 +23,22 @@ if (!empty($_POST["btn-access"])) {
 
                 switch ($_SESSION["Role"]) {
                     case "CJ922":
-                        header("locatio:../Checker/index.php");
+                        header("locatio:../Checker/customer-creator.php");
                         break;
                     case "CL670":
-                        header("location:../Client/index.php");
+                        header("location:../Client/index.html");
                         break;
                     case "DP121":
-                        header("location:../Dependent/index.php");
+                        header("location:../Dependent/index.html");
                         break;
                     case "GG129":
-                        header("location:../GeneralManager/index.php");
+                        header("location:../GeneralManager/BankGeneralManager.html");
                         break;
                     case "GS181":
-                        header("location:../BranchOfficeManager/index.php");
+                        header("location:../BranchOfficeManager/BankGeneralManager.html");
                         break;
                     default:
-                        header("location:../WebSite/index.php");
+                        header("location:../WebSite/index.html");
                         break;
                 }
 
