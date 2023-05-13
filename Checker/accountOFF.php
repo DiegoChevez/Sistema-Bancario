@@ -81,36 +81,7 @@ include_once("head.php");
                                         $resultado = mysqli_query($conex, $sql);
 
                                         // Verificar si se encontraron resultados
-                                        if (mysqli_num_rows($resultado) > 0) {
-                                            $dataN = 1;
-                                            // Imprimir los resultados en una tabla HTML
-                                            while ($fila = mysqli_fetch_assoc($resultado)) {
-                                                echo "<tr>";
-                                                echo "<td>" . $dataN . "</td>";
-                                                echo "<td>" . $fila['Username'] . "</td>";
-                                                echo "<td>" . $fila['AccountNumber'] . "</td>";
-                                                echo "<td>" . $fila['CVV'] . "</td>";
-                                                echo "<td>" . $fila['DueDate'] . "</td>";
-                                                echo "<td>$" . $fila['Balance'] . "</td>";
-                                                echo "<td>" . $fila['AccountType'] . "</td>";
-                                                echo "<td>" . $fila['OpeningDate'] . "</td>";
-                                                if($fila['Status']=='Activo'){
-                                                    echo '<td><center><span class="badge badge-primary">' . $fila['Status'] . '</span></center></td>';
-                                                    echo '<td><center>
-                                                            <a class="btn btn-success" href="controllers/customer-controller.php?id_Cliente='. $fila['Customer'] .'& action=deshabilitar" role="button"><i class="fa-solid fa-trash-can"></i><i class="fa-solid fa-check"></i></a>
-                                                        </center></td>';
-                                                }else{
-                                                    echo '<td><center><span class="badge badge-secondary">' . $fila['Status'] . '</span></center></td>';
-                                                    echo '<td><center>
-                                                            <a class="btn btn-success" href="controllers/customer-controller.php?id_Cliente='. $fila['Customer'] .'& action=activar" role="button"><i class="fa-solid fa-check"></i></a>
-                                                        </center></td>';
-                                                }
-                                                
-                                                $dataN++;
-                                            }
-                                            echo "</tr>";
-                                        }
-
+                                        
                                         mysqli_free_result($resultado);
                                         mysqli_close($conex);
 
